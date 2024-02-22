@@ -55,7 +55,6 @@ class OTMLeaders(models.Model):
     position = models.CharField(max_length=300)
     image = models.ImageField(upload_to=slugify_upload)
     phone_number = models.CharField(max_length=18, blank=True)
-    admission_days = models.CharField(max_length=180, blank=True, null=True)
     email = models.EmailField(blank=True)
 
     class Meta:
@@ -71,7 +70,6 @@ class PELeaders(models.Model):
     position = models.CharField(max_length=300)
     image = models.ImageField(upload_to=slugify_upload)
     phone_number = models.CharField(max_length=18, blank=True)
-    admission_days = models.CharField(max_length=180, blank=True, null=True)
     email = models.EmailField(blank=True)
 
     class Meta:
@@ -87,7 +85,6 @@ class EOLeaders(models.Model):
     position = models.CharField(max_length=300)
     image = models.ImageField(upload_to=slugify_upload)
     phone_number = models.CharField(max_length=18, blank=True)
-    admission_days = models.CharField(max_length=180, blank=True, null=True)
     email = models.EmailField(blank=True)
 
     class Meta:
