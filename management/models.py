@@ -20,9 +20,10 @@ def slugify_upload(instance, filename):
 
 class Directors(models.Model):
     fullname = models.CharField(max_length=180)
-    position = models.CharField(max_length=350)
+    position = models.CharField(max_length=300)
     image = models.ImageField(upload_to=slugify_upload)
     phone_number = models.CharField(max_length=18, blank=True)
+    admission_days = models.CharField(max_length=180, blank=True, null=True)
     email = models.EmailField()
 
     class Meta:
@@ -35,9 +36,10 @@ class Directors(models.Model):
 
 class Employees(models.Model):
     fullname = models.CharField(max_length=180)
-    position = models.CharField(max_length=350)
+    position = models.CharField(max_length=300)
     image = models.ImageField(upload_to=slugify_upload)
-    phone_number = models.CharField(max_length=18,blank=True)
+    phone_number = models.CharField(max_length=18, blank=True)
+    admission_days = models.CharField(max_length=180, blank=True, null=True)
     email = models.EmailField(blank=True)
 
     class Meta:
@@ -50,9 +52,10 @@ class Employees(models.Model):
 
 class OTMLeaders(models.Model):
     fullname = models.CharField(max_length=180)
-    position = models.CharField(max_length=350)
+    position = models.CharField(max_length=300)
     image = models.ImageField(upload_to=slugify_upload)
     phone_number = models.CharField(max_length=18, blank=True)
+    admission_days = models.CharField(max_length=180, blank=True, null=True)
     email = models.EmailField(blank=True)
 
     class Meta:
@@ -65,9 +68,10 @@ class OTMLeaders(models.Model):
 
 class PELeaders(models.Model):
     fullname = models.CharField(max_length=180)
-    position = models.CharField(max_length=350)
+    position = models.CharField(max_length=300)
     image = models.ImageField(upload_to=slugify_upload)
     phone_number = models.CharField(max_length=18, blank=True)
+    admission_days = models.CharField(max_length=180, blank=True, null=True)
     email = models.EmailField(blank=True)
 
     class Meta:
@@ -80,9 +84,10 @@ class PELeaders(models.Model):
 
 class EOLeaders(models.Model):
     fullname = models.CharField(max_length=180)
-    position = models.CharField(max_length=350)
+    position = models.CharField(max_length=300)
     image = models.ImageField(upload_to=slugify_upload)
     phone_number = models.CharField(max_length=18, blank=True)
+    admission_days = models.CharField(max_length=180, blank=True, null=True)
     email = models.EmailField(blank=True)
 
     class Meta:

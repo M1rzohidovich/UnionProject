@@ -19,7 +19,7 @@ def slugify_upload(instance, filename):
 
 
 class MainNews(models.Model):
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=170)
     img1 = models.ImageField(upload_to=slugify_upload)
     img2 = models.ImageField(upload_to=slugify_upload, blank=True)
     img3 = models.ImageField(upload_to=slugify_upload, blank=True)
@@ -36,7 +36,7 @@ class MainNews(models.Model):
 
 
 class Announcements(models.Model):
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=170)
     image = models.ImageField(upload_to=slugify_upload)
     image2 = models.ImageField(upload_to=slugify_upload, blank=True)
     description = models.TextField()
@@ -52,10 +52,10 @@ class Announcements(models.Model):
 
 
 class Articles(models.Model):
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=170)
     description = models.TextField()
     image = models.ImageField(upload_to=slugify_upload, blank=True)
-    after = models.CharField(max_length=200)
+    after = models.CharField(max_length=170)
     file = models.FileField(blank=True, null=True)
     upload_date = models.DateField(auto_now_add=True)
 
@@ -68,7 +68,7 @@ class Articles(models.Model):
 
 
 class OwnersOfGreatHearts(models.Model):
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=170)
     image1 = models.ImageField(upload_to=slugify_upload)
     image2 = models.ImageField(upload_to=slugify_upload, blank=True)
     image3 = models.ImageField(upload_to=slugify_upload, blank=True)
@@ -85,7 +85,7 @@ class OwnersOfGreatHearts(models.Model):
 
 
 class Privileges(models.Model):
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=170)
     image = models.ImageField(upload_to=slugify_upload, blank=True)
     description = models.TextField()
     upload_date = models.DateField(auto_now_add=True)
@@ -99,7 +99,7 @@ class Privileges(models.Model):
 
 
 class YoungReception(models.Model):
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=170)
     image = models.ImageField(upload_to=slugify_upload)
     image1 = models.ImageField(upload_to=slugify_upload, blank=True)
     image2 = models.ImageField(upload_to=slugify_upload, blank=True)
