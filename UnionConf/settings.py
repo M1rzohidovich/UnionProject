@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'management',
     #external_app
     'rest_framework',
+    'ckeditor',
+    'ckeditor_uploader',
 
     
 
@@ -206,3 +208,11 @@ JAZZMIN_UI_TWEAKS = {
     "dark_mode_theme": "darkly",
 }
 
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'height': 400,
+        'width': 550,
+    },
+}
+CKEDITOR_UPLOAD_PATH = "uploads/"

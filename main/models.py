@@ -1,7 +1,7 @@
 from django.db import models
 from os.path import splitext
-
 from django.utils.text import slugify
+from ckeditor.fields import RichTextField
 
 
 def slugify_upload(instance, filename):
@@ -23,7 +23,7 @@ class MainNews(models.Model):
     img1 = models.ImageField(upload_to=slugify_upload)
     img2 = models.ImageField(upload_to=slugify_upload, blank=True)
     img3 = models.ImageField(upload_to=slugify_upload, blank=True)
-    description = models.TextField()
+    description = RichTextField()
     video = models.FileField(upload_to=slugify_upload, null=True, blank=True)
     upload_date = models.DateField(auto_now_add=True)
 
@@ -39,7 +39,7 @@ class Announcements(models.Model):
     title = models.CharField(max_length=170)
     image = models.ImageField(upload_to=slugify_upload)
     image2 = models.ImageField(upload_to=slugify_upload, blank=True)
-    description = models.TextField()
+    description = RichTextField()
     video = models.FileField(upload_to=slugify_upload, blank=True, null=True)
     upload_date = models.DateField(auto_now_add=True)
 
@@ -53,7 +53,7 @@ class Announcements(models.Model):
 
 class Articles(models.Model):
     title = models.CharField(max_length=170)
-    description = models.TextField()
+    description = RichTextField()
     image = models.ImageField(upload_to=slugify_upload, blank=True)
     after = models.CharField(max_length=170)
     file = models.FileField(blank=True, null=True)
@@ -72,7 +72,7 @@ class OwnersOfGreatHearts(models.Model):
     image1 = models.ImageField(upload_to=slugify_upload)
     image2 = models.ImageField(upload_to=slugify_upload, blank=True)
     image3 = models.ImageField(upload_to=slugify_upload, blank=True)
-    description = models.TextField()
+    description = RichTextField()
     video = models.FileField(null=True, blank=True)
     upload_date = models.DateField(auto_now_add=True)
 
@@ -87,7 +87,7 @@ class OwnersOfGreatHearts(models.Model):
 class Privileges(models.Model):
     title = models.CharField(max_length=170)
     image = models.ImageField(upload_to=slugify_upload, blank=True)
-    description = models.TextField()
+    description = RichTextField()
     upload_date = models.DateField(auto_now_add=True)
 
     class Meta:
@@ -103,7 +103,7 @@ class YoungReception(models.Model):
     image = models.ImageField(upload_to=slugify_upload)
     image1 = models.ImageField(upload_to=slugify_upload, blank=True)
     image2 = models.ImageField(upload_to=slugify_upload, blank=True)
-    description = models.TextField()
+    description = RichTextField()
     video = models.FileField(upload_to=slugify_upload, blank=True)
     upload_date = models.DateField(auto_now_add=True)
 
