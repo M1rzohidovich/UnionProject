@@ -20,9 +20,9 @@ def slugify_upload(instance, filename):
 
 class MainNews(models.Model):
     title = models.CharField(max_length=170)
-    img1 = models.ImageField(upload_to=slugify_upload)
-    img2 = models.ImageField(upload_to=slugify_upload, blank=True)
-    img3 = models.ImageField(upload_to=slugify_upload, blank=True)
+    image = models.ImageField(upload_to=slugify_upload)
+    image1 = models.ImageField(upload_to=slugify_upload, blank=True)
+    image2 = models.ImageField(upload_to=slugify_upload, blank=True)
     description = RichTextField()
     video = models.FileField(upload_to=slugify_upload, null=True, blank=True)
     upload_date = models.DateField(auto_now_add=True)
@@ -69,9 +69,9 @@ class Articles(models.Model):
 
 class OwnersOfGreatHearts(models.Model):
     title = models.CharField(max_length=170)
-    image1 = models.ImageField(upload_to=slugify_upload)
+    image = models.ImageField(upload_to=slugify_upload)
+    image1 = models.ImageField(upload_to=slugify_upload, blank=True)
     image2 = models.ImageField(upload_to=slugify_upload, blank=True)
-    image3 = models.ImageField(upload_to=slugify_upload, blank=True)
     description = RichTextField()
     video = models.FileField(null=True, blank=True)
     upload_date = models.DateField(auto_now_add=True)
@@ -115,6 +115,32 @@ class YoungReception(models.Model):
         return self.title
 
 
+class Report(models.Model):
+    title = models.CharField(max_length=300)
+    image = models.ImageField(upload_to=slugify_upload)
+    video = models.FileField(upload_to=slugify_upload)
+    upload_date = models.DateField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Report"
+        verbose_name_plural = "OAV"
+
+    def __str__(self):
+        return self.title
 
 
+class Partners(models.Model):
+    title = models.CharField(max_length=180)
+    image = models.ImageField(upload_to=slugify_upload)
+    image1 = models.ImageField(upload_to=slugify_upload)
+    image3 = models.ImageField(upload_to=slugify_upload)
+    description = RichTextField()
+    upload_date = models.DateField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Partners"
+        verbose_name_plural = "Hamkorlar"
+
+    def __str__(self):
+        return self.title
 

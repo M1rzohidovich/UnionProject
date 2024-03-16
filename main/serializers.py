@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from django.conf import settings
-from main.models import Articles, Announcements, MainNews, OwnersOfGreatHearts, YoungReception, Privileges
+from main.models import Articles, Announcements, MainNews, OwnersOfGreatHearts, YoungReception, Privileges, Report,\
+    Partners
 
 
 class AnnouncementSerializer(serializers.ModelSerializer):
@@ -39,4 +40,13 @@ class YoungReceptionSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
+class ReportSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Report
+        fields = "__all__"
 
+
+class PartnersSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Partners
+        fields = "__all__"

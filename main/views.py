@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .models import Articles, Announcements, MainNews, OwnersOfGreatHearts, Privileges, YoungReception
+from .models import Articles, Announcements, MainNews, OwnersOfGreatHearts, Privileges, YoungReception, Report, Partners
 from .serializers import AnnouncementSerializer, ArticleSerializer, MainNewsSerializer, OwnersOfGreateHeartSerializer, \
-    YoungReceptionSerializer,  PrivilegesSerializer
+    YoungReceptionSerializer,  PrivilegesSerializer, ReportSerializer, PartnersSerializer
 
 
 class GetAnnouncement(APIView):
@@ -82,5 +82,25 @@ class GetReception(APIView):
         return Response(serializer.data)
 
 
+class GetReport(APIView):
+
+    def get(self, request, id=None):
+        if id:
+            report = Report.objects.get(id=id)
+            serializer = ReportSerializer(report)
+        else:
+            report = Report.objects.all()
+            serializer = ReportSerializer(report, many=True)
+        return Response(serializer.data)
 
 
+class GetPartners(APIView):
+
+    def get(self, request, id=None):
+        if id:
+            partner = Partners.objects.get(id=id)
+            serializer = PartnersSerializer(partner)
+        else:
+            partner = Partners.objects.all()
+            serializer = PartnersSerializer(partner, many=True)
+        return  Response(serializer.data)
